@@ -18,13 +18,13 @@ ul {
 }
 
 .container {
-  max-width: 768px;
+  max-width:700px;
   margin: auto;
   padding: 0 20px;
 }
 
 header {
-  height: 70px;
+  height: 100px;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -92,7 +92,8 @@ header {
 }
 
 [type='radio'] {
-  opacity: 0;
+  /* opacity: 0; */
+  
 }
 
 [type='radio']:checked ~ label {
@@ -109,9 +110,9 @@ header {
 }
 
 input {
-  flex-grow: 2;
+  
   border: none;
-  font-size: 16px;
+  font-size: 1px;
 }
 
 input:focus {
@@ -162,7 +163,34 @@ input:focus {
 .btn-secondary {
   background: #ff6a95;
 }
+.btn-red {
+  background-color:red;
+  height: 50px;
+  width: 50px;   
+  border: 1px #eee solid;
+  border-radius: 50%;
+  font-size: 19px;
+  color:#f4f4f4;
+}
 
+.btn-green {
+  background: green;
+  height: 50px;
+  width: 50px;    
+  border: 1px #eee solid;
+  border-radius: 50%;
+  font-size: 19px;
+  color:#f4f4f4;
+}
+.btn-orange {
+  background: orange;
+  height: 50px;
+  width: 50px;    
+  border: 1px #eee solid;
+  border-radius: 50%;
+  font-size: 19px;
+  color:#f4f4f4;
+}
 .btn:hover {
   transform: scale(0.98);
   opacity: 0.9;
