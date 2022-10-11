@@ -2,7 +2,7 @@
 
 Task Tracker App enables to keep track of tasks in an organised way.
 It allows to set priority ,add tasks , delete tasks and edit an existing tasks.
-![]https://github.com/kaviramsv/TaskTracker/blob/main/images/Tasktracker1.png
+![](images//Tasktracker1.png)
 ![]https://github.com/kaviramsv/TaskTracker/blob/main/images/Tasktracker2.png
 ![]https://github.com/kaviramsv/TaskTracker/blob/main/images/Tasktracker3.png
 ![]https://github.com/kaviramsv/TaskTracker/blob/main/images/Tasktracker4.png
