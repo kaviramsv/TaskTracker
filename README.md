@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 Task Tracker App enables to keep track of tasks in an organised way.
-It allows to set priority ,add tasks , delete tasks and edit an existing tasks.
+It allows to set priority ,add tasks , delete tasks and edit existing tasks.
 ![](images//Tasktracker1.png)
 ![](images//Tasktracker2.png)
 ![](images//Tasktracker3.png)
