@@ -7,6 +7,10 @@ const TaskContext = createContext();
 
 export const TaskProvider = ({ children }) => {
   const [tasks, setTasks] = useState(todos)
+  const [taskEdit, setTaskEdit] = useState({
+    task: {},
+    edit: false
+  })
 
   const deleteHandler = (id) => {
     if (window.confirm('are you sure you want to delete?')) {
@@ -20,11 +24,20 @@ export const TaskProvider = ({ children }) => {
     setTasks([task, ...tasks])
   }
 
-  const updateHandler = (id) => {
+  const editHandler = (task) => {
+    setTaskEdit({
+      task,
+      edit: true
+    })
+  }
+  const updateHandler = (id, updatedTask) => {
+    console.log(id, updatedTask)
+    setTasks(
+      tasks.map(task => (task.id === id ? { ...task, ...updatedTask } : task)))
 
   }
   return (
-    <TaskContext.Provider value={{ tasks, setTasks, deleteHandler, addHandler, updateHandler }}>
+    <TaskContext.Provider value={{ tasks, setTasks, deleteHandler, addHandler, editHandler, updateHandler, taskEdit, setTaskEdit }}>
       {children}
     </TaskContext.Provider>)
 }

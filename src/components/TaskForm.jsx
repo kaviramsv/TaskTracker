@@ -1,25 +1,42 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import TaskContext from '../context/taskContext';
 import Button from './Button';
 import Card from './Card';
+import FeedbackItem from './FeedbackItem';
 import RatingSelect from './RatingSelect';
 
 const TaskForm = () => {
 
-  const { addHandler } = useContext(TaskContext)
+  const { addHandler, taskEdit, updateHandler } = useContext(TaskContext)
 
   const [task, setTask] = useState("");
   const [rating, setRating] = useState("H");
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    console.log(taskEdit)
+    if (taskEdit.edit === true) {
+      setBtnDisabled(false);
+      setTask(taskEdit.task.name);
+      setRating(taskEdit.task.priority);
+    }
+  }, [taskEdit])
+
   const submitHandler = (evt) => {
     evt.preventDefault();
     const newTask = {
       priority: rating,
       name: task
     };
-    console.log(newTask);
-    addHandler(newTask);
+    // console.log(newTask);
+
+    if (taskEdit.edit === true) {
+      console.log(taskEdit.task.id)
+      updateHandler(taskEdit.task.id, newTask)
+    } else {
+      addHandler(newTask);
+    }
     setTask("");
   }
   const handleRating = (rating) => {
@@ -44,7 +61,7 @@ const TaskForm = () => {
     <Card>
       <form onSubmit={submitHandler}>
         <div className="mb-1 ">
-          <h2 className='mb-2'>Set Your Priority</h2>
+          <h2 className='m-2'>Set Your Priority</h2>
           <RatingSelect handleRating={handleRating} />
           <div className="d-flex flex-row ">
             <input
